@@ -1,0 +1,51 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
+
+    defaultConfig {
+        applicationId "demoox.gigigo.com.demoox"
+        minSdkVersion 11
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+        ndk {
+            abiFilters "armeabi-v7a"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.1.1'
+
+
+    compile('com.github.nuborisar.oxcustomMc:orchextrasdk:3.8:play9Release@aar')
+            {
+                transitive = true
+                changing = true
+
+            }
+    //3.0.1RCtest
+//    compile('com.github.orchextra.orchextra-android-sdk:orchextrasdk:3.0.1RC:play9Release@aar')
+//            {
+//                transitive = true
+//                changing = true
+//
+//            }
+    compile 'com.google.android.gms:play-services-location:9.0.0'
+    compile 'com.google.android.gms:play-services-gcm:9.0.0'
+    //vuforia 6.0
+    compile 'com.github.GigigoGreenLabs.imgRecogModule:vuforiaimplementation:1.1'
+
+    //compile'com.github.GigigoGreenLabs:Communicator:0.9'
+    // compile('com.github.GigigoGreenLabs.Communicator:actionfactory:0.9:actionfactory-release@aar')
+}
