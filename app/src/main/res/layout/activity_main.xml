@@ -51,6 +51,12 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:text="Open Vuforia" />
+
+        <Button
+            android:id="@+id/btnLogcat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LogCat"/>
     </LinearLayout>
 
 </RelativeLayout>

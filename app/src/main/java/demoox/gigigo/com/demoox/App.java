@@ -1,8 +1,10 @@
 package demoox.gigigo.com.demoox;
 
 import android.app.Application;
+import android.support.designox.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.gigigo.orchextra.CustomSchemeReceiver;
 import com.gigigo.orchextra.Orchextra;
@@ -73,6 +75,8 @@ public class App extends Application implements CustomSchemeReceiver {
 
         API_KEY = preferencesImp.getKey();
         API_SECRET = preferencesImp.getSecret();
+
+        Toast.makeText(this,"Ini con ApiKey:" + API_KEY + "\n ApiSecret:"+API_SECRET, Toast.LENGTH_LONG).show();
 
         OrchextraBuilder builder = new OrchextraBuilder(this)
                 .setApiKeyAndSecret(API_KEY, API_SECRET)
